@@ -99,7 +99,7 @@ namespace Microsoft.Toolkit.HighPerformance.Extensions
             // The result is then negated, producing the value 0xFFFFFFFF
             // for valid indices, or 0 otherwise. The generated mask
             // is then combined with the original index. This leaves
-            // the index intact if it was valid, otherwise zeroes it.
+            // the index intact if it was valid, otherwise zeros it.
             // The computed offset is finally used to access the
             // lookup table, and it is guaranteed to never go out of
             // bounds unless the input span was just empty, which for a
@@ -279,7 +279,7 @@ namespace Microsoft.Toolkit.HighPerformance.Extensions
         /// even long sequences of values. For the reference implementation, see: <see href="http://www.cse.yorku.ca/~oz/hash.html"/>.
         /// For details on the used constants, see the details provided in this StackOverflow answer (as well as the accepted one):
         /// <see href="https://stackoverflow.com/questions/10696223/reason-for-5381-number-in-djb-hash-function/13809282#13809282"/>.
-        /// Additionally, a comparison between some common hashing algoriths can be found in the reply to this StackExchange question:
+        /// Additionally, a comparison between some common hashing algorithms can be found in the reply to this StackExchange question:
         /// <see href="https://softwareengineering.stackexchange.com/questions/49550/which-hashing-algorithm-is-best-for-uniqueness-and-speed"/>.
         /// Note that the exact implementation is slightly different in this method when it is not called on a sequence of <see cref="byte"/>
         /// values: in this case the <see cref="object.GetHashCode"/> method will be invoked for each <typeparamref name="T"/> value in

@@ -99,7 +99,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
                 _autoSuggestBox.LostFocus += AutoSuggestBox_LostFocus;
 
                 // Setup a binding to the QueryIcon of the Parent if we're the last box.
-                if (Content is PretokenStringContainer str && str.IsLast)
+                if (Content is ITokenStringContainer str && str.IsLast)
                 {
                     // Workaround for https://github.com/microsoft/microsoft-ui-xaml/issues/2568
                     if (Owner.QueryIcon is FontIconSource fis &&
@@ -218,7 +218,7 @@ namespace Microsoft.Toolkit.Uwp.UI.Controls
 
         private void AutoSuggestBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            // Verify if the usual behaviour of clearing token selection is required
+            // Verify if the usual behavior of clearing token selection is required
             if (Owner.PauseTokenClearOnFocus == false && !TokenizingTextBox.IsShiftPressed)
             {
                 // Clear any selected tokens
